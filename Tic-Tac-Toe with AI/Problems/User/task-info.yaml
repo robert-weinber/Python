@@ -1,0 +1,23 @@
+type: code
+files:
+- name: tests.py
+  visible: false
+  text: |-
+    from test_helper import check_samples
+
+    if __name__ == '__main__':
+        check_samples(samples=[])
+  learner_created: false
+- name: task.py
+  visible: true
+  text: |-
+    class User:
+        # create the class here
+
+
+    # this code is to check you, don't delete it
+    print(dir(User))
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6681
+status: Solved
+record: -1

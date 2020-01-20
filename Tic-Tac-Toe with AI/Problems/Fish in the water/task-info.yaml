@@ -1,0 +1,26 @@
+type: code
+files:
+- name: tests.py
+  visible: false
+  text: |-
+    from test_helper import check_samples
+
+    if __name__ == '__main__':
+        check_samples(samples=[])
+  learner_created: false
+- name: task.py
+  visible: true
+  text: |-
+    class Fish:
+        place = "aquarium"
+        n_fish = 0  # number of fish in the aquarium
+
+        def __init__(self, name, kind):
+            self.name = name
+            self.kind = kind
+
+    greg = Fish("Greg", "guppy")
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6682
+status: Solved
+record: -1

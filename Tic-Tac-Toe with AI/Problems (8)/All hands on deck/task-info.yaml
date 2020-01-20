@@ -1,0 +1,16 @@
+type: code
+files:
+- name: tests.py
+  visible: false
+  text: |-
+    from test_helper import check_samples
+
+    if __name__ == '__main__':
+        check_samples(samples=[["Ace\n4\n9\nJack\n10\n7","9.166666666666666"]])
+  learner_created: false
+- name: task.py
+  visible: true
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6553
+status: Solved
+record: -1

@@ -1,0 +1,28 @@
+type: code
+files:
+- name: tests.py
+  visible: false
+  text: |-
+    from test_helper import check_samples
+
+    if __name__ == '__main__':
+        check_samples(samples=[])
+  learner_created: false
+- name: task.py
+  visible: true
+  text: |-
+    class MyClass:
+        n_objects = 0
+
+        def __new(self):
+            if cls.n_objects < 5:
+                instance = object.__new__(cls)
+                cls.n_objects += 1
+                return instance
+
+        def __str__(self):
+            print("")
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7143
+status: Solved
+record: -1

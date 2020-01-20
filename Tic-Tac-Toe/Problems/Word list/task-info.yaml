@@ -1,0 +1,20 @@
+type: code
+files:
+- name: tests.py
+  visible: false
+  text: |-
+    from test_helper import check_samples
+
+    if __name__ == '__main__':
+        check_samples(samples=[["1\n","[\u0027a\u0027, \u0027a\u0027]"]])
+  learner_created: false
+- name: task.py
+  visible: true
+  text: |-
+    text = [["Glitch", "is", "a", "minor", "problem", "that", "causes", "a", "temporary", "setback"],
+            ["Ephemeral", "lasts", "one", "day", "only"],
+            ["Accolade", "is", "an", "expression", "of", "praise"]]
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6321
+status: Solved
+record: -1

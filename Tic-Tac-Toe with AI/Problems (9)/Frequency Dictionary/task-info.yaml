@@ -1,0 +1,17 @@
+type: code
+files:
+- name: tests.py
+  visible: false
+  text: |-
+    from test_helper import check_samples
+
+    if __name__ == '__main__':
+        check_samples(samples=[["a aa abC aa ac abc bcd a","a 2\naa 2\nabc 2\nac 1\nbcd 1"],["a A a","a 3"]])
+  learner_created: false
+- name: task.py
+  visible: true
+  text: '# put your python code here'
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6487
+status: Solved
+record: -1

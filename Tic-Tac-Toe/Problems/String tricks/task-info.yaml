@@ -1,0 +1,19 @@
+type: code
+files:
+- name: tests.py
+  visible: false
+  text: |-
+    from test_helper import check_samples
+
+    if __name__ == '__main__':
+        check_samples(samples=[])
+  learner_created: false
+- name: task.py
+  visible: true
+  text: |-
+    random_numbers = [1, 22, 333, 4444, 55555]
+    print("\n".join(random_numbers))
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6980
+status: Solved
+record: -1

@@ -1,0 +1,30 @@
+type: code
+files:
+- name: tests.py
+  visible: false
+  text: |-
+    from test_helper import check_samples
+
+    if __name__ == '__main__':
+        check_samples(samples=[["home Heaven","Angel"]])
+  learner_created: false
+- name: task.py
+  visible: true
+  text: |-
+    class Angel:
+        color = "white"
+        feature = "wings"
+        home = "Heaven"
+
+
+    class Demon:
+        color = "red"
+        feature = "horns"
+        home = "Hell"
+
+
+    # write your code here
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6668
+status: Solved
+record: -1
