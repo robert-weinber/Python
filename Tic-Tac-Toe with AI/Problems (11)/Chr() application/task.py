@@ -1,5 +1,0 @@
-a = chr(int(input()))
-b = chr(int(input()))
-c = chr(int(input()))
-d = chr(int(input()))
-print(a + b + c + d)
