@@ -1,4 +1,4 @@
-inp = list('         ') # input())
+inp = list('         ')
 board = [[inp[0], inp[1], inp[2]], [inp[3], inp[4], inp[5]], [inp[6], inp[7], inp[8]]]
 finished = False
 

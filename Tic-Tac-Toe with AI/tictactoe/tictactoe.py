@@ -4,11 +4,11 @@ import sys
 
 players = []
 finished = False
-inp = list('         ')
+inp = list('         ') # empty board
 board = [[inp[0], inp[1], inp[2]], [inp[3], inp[4], inp[5]], [inp[6], inp[7], inp[8]]]
-next_symbol = 'X'
+next_symbol = 'X' # X starts
 
-def get_params():
+def get_params(): # Gets starting commands
     while True:
         start_params = list(input('Input command:').split(' '))
         if start_params[0] == 'exit':
@@ -21,20 +21,7 @@ def get_params():
         print('Bad parameters!')
 
 
-def precheck():
-    x_count = 0
-    o_count = 0
-    for part in board:
-        for item in part:
-            if item == 'X':
-                x_count += 1
-            if item == 'O':
-                o_count += 1
-    if x_count > o_count:
-        next_symbol = 'O'
-
-
-def draw_board(target_board):
+def draw_board(target_board): # Draws the board on the console
     print('---------')
     row = '| ' + target_board[0][0] + ' ' + target_board[0][1] + ' ' + target_board[0][2] + ' |'
     print(row)
@@ -45,7 +32,7 @@ def draw_board(target_board):
     print('---------')
 
 
-def evaluate(target_board, calculating=False, hard=False):
+def evaluate(target_board, calculating=False, hard=False): # evaluates the result of the step (Win, Lose, Draw, Continue)
     x_count = 0
     o_count = 0
     for part in target_board:
@@ -86,7 +73,7 @@ def evaluate(target_board, calculating=False, hard=False):
     return mess
 
 
-def get_coords():
+def get_coords(): # Gets user input for next step
     valid_input = False
     coords = []
     while not valid_input:
@@ -107,7 +94,7 @@ def get_coords():
     return [3 - coords[1],coords[0] - 1]
 
 
-def get_bot_coords_easy(messaging = True):
+def get_bot_coords_easy(messaging = True): # Random steps on an empty cell
     if messaging:
         print('Making move level "easy"')
     valid_input = False
@@ -120,7 +107,7 @@ def get_bot_coords_easy(messaging = True):
     return coords
 
 
-def get_bot_coords_medium(symbol):
+def get_bot_coords_medium(symbol): # Wins if can in 1 step and stop opponent from the same
     print('Making move level "medium"')
     my_symbol = symbol
     if symbol == 'X':
@@ -141,7 +128,7 @@ def get_bot_coords_medium(symbol):
     return get_bot_coords_easy(False)
 
 
-def get_bot_coords_hard(symbol):
+def get_bot_coords_hard(symbol): # Searching for the best possible action with minmax recursive
     print('Making move level "hard"')
     my_symbol = symbol
     if symbol == 'X':
@@ -171,7 +158,7 @@ def get_bot_coords_hard(symbol):
     return best_result
 
 
-def minmax(brd, my_symbol, curr_symbol, level):
+def minmax(brd, my_symbol, curr_symbol, level): # Recursive search for the best action.
     if my_symbol == 'X':
         enemy_symbol = 'O'
     else:
@@ -199,14 +186,14 @@ def minmax(brd, my_symbol, curr_symbol, level):
         return value_of_choice
 
 
-def make_move(coords):
+def make_move(coords): # Changes the board and draws it
     board[coords[0]][coords[1]] = next_symbol
     draw_board(board)
 
 
 players = get_params()
 draw_board(board)
-while True:
+while True: # Game loop
     next_symbol = 'X'
     if players[0] == 'user':
         make_move(get_coords())
@@ -216,7 +203,7 @@ while True:
         make_move(get_bot_coords_medium(next_symbol))
     if players[0] == 'hard':
         make_move(get_bot_coords_hard(next_symbol))
-    if evaluate(board):
+    if evaluate(board): # True if game over
         break
     next_symbol = 'O'
     if players[1] == 'user':
@@ -227,5 +214,5 @@ while True:
         make_move(get_bot_coords_medium(next_symbol))
     if players[1] == 'hard':
         make_move(get_bot_coords_hard(next_symbol))
-    if evaluate(board):
+    if evaluate(board): # True if game over
         break
